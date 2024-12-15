@@ -3,7 +3,7 @@ main: VsrStudio\JavaMapConvert\Main
 version: 1.0.0
 api: [5.0.0]
 author: VsrStudio
-description: Plugin untuk mengonversi peta Minecraft Java ke Bedrock dengan fitur lanjutan.
+description: Plugin to convert Minecraft Java maps to Bedrock with advanced features.
 
 commands:
   convertmap:

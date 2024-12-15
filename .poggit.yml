@@ -1,0 +1,8 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/VsrStudio/JavaMapConvert
+build-by-default: true
+branches:
+- main
+projects:
+  JavaMapConvert:
+    path: ""
+...

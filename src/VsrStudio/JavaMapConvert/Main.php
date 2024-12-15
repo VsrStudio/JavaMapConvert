@@ -14,11 +14,11 @@ class Main extends PluginBase {
 
     public function onEnable(): void {
         $this->saveDefaultConfig();
-        $this->getLogger()->info("JavaMapConvert telah diaktifkan!");
+        $this->getLogger()->info("JavaMapConvert Has Been Activated!");
     }
 
     public function onDisable(): void {
-        $this->getLogger()->info("JavaMapConvert telah dinonaktifkan!");
+        $this->getLogger()->info("JavaMapConvert Has Been Deactivated!");
     }
 
     public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool {
@@ -32,7 +32,7 @@ class Main extends PluginBase {
             $destination = $args[1];
 
             if (!is_dir($source)) {
-                $sender->sendMessage("§cFolder sumber tidak ditemukan!");
+                $sender->sendMessage("§cFolder Not Found!");
                 return false;
             }
 
@@ -40,7 +40,6 @@ class Main extends PluginBase {
                 mkdir($destination, 0777, true);
             }
 
-            // Jalankan task untuk konversi
             $this->getScheduler()->scheduleAsyncTask(new ConvertTask($source, $destination, $this));
             $sender->sendMessage("§aKonversi sedang diproses di latar belakang...");
             return true;
@@ -63,7 +62,7 @@ class Main extends PluginBase {
             [$source, $destination] = $data;
 
             if (!is_dir($source)) {
-                $player->sendMessage("§cFolder sumber tidak ditemukan!");
+                $player->sendMessage("§cFolder Source Not Found!");
                 return;
             }
 
@@ -72,7 +71,7 @@ class Main extends PluginBase {
             }
 
             $this->getScheduler()->scheduleAsyncTask(new ConvertTask($source, $destination, $this));
-            $player->sendMessage("§aKonversi sedang diproses...");
+            $player->sendMessage("§a Conversion Has Been Processed...");
         });
 
         $form->setTitle("JavaMapConvert");

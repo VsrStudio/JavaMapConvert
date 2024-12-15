@@ -1,0 +1,21 @@
+name: JavaMapConvert
+main: VsrStudio\JavaMapConvert\Main
+version: 1.0.0
+api: [5.0.0]
+author: VsrStudio
+description: Plugin untuk mengonversi peta Minecraft Java ke Bedrock dengan fitur lanjutan.
+
+commands:
+  convertmap:
+    description: Mengonversi peta dari Java ke Bedrock.
+    permission: javaconvert.command
+  convertmapform:
+    description: Membuka UI untuk mengonversi peta.
+    permission: javaconvert.command
+permissions:
+  javaconvert.command:
+    default: op
+
+config:
+  threads: 2 # Number of threads for multi-threading conversion
+  logging: true #  Enable process log

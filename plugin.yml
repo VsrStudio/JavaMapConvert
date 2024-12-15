@@ -15,7 +15,3 @@ commands:
 permissions:
   javaconvert.command:
     default: op
-
-config:
-  threads: 2 # Number of threads for multi-threading conversion
-  logging: true #  Enable process log
